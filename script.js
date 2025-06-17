@@ -1,4 +1,4 @@
-// Animación de scroll suave
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -8,7 +8,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Animación de aparición al hacer scroll
+
 const observerOptions = {
     threshold: 0.1
 };
@@ -26,7 +26,7 @@ document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
 });
 
-// Formulario de turnos
+
 const turnoForm = document.createElement('div');
 turnoForm.innerHTML = `
     <div id="turnoModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
@@ -64,20 +64,18 @@ turnoForm.innerHTML = `
 `;
 document.body.appendChild(turnoForm);
 
-// Funciones para el modal de turnos
+
 function toggleTurnoModal() {
     const modal = document.getElementById('turnoModal');
     modal.classList.toggle('hidden');
     modal.classList.toggle('flex');
 }
 
-// Agregar evento al botón de turnos
+
 document.querySelector('button').addEventListener('click', toggleTurnoModal);
 
-// Manejar envío del formulario
 document.getElementById('turnoForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    // Aquí iría la lógica para enviar el formulario
     alert('Turno solicitado con éxito. Nos pondremos en contacto contigo pronto.');
     toggleTurnoModal();
 });
